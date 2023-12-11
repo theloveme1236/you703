@@ -1,6 +1,8 @@
 import os
 import sys
 fisrt_start = sys.argv[1]
+apk_open = sys.argv[2]
+apk_id = sys.argv[3]
 os.system('sudo apt update -y')
 os.system('sudo apt install python3-pip -y')
 os.system('sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb')
@@ -180,8 +182,7 @@ def follow_tiktok():
                     username = onclick_value.split('@')[-1]
                     database_url = 'https://ahmed-3cacf-default-rtdb.firebaseio.com/'
                     users_endpoint = fisrt_start
-                    new_user_data = {"name": "mohamed", "email": username}
-                    response_put = requests.put(f'{database_url}/{users_endpoint}', json=new_user_data)
+                    new_user_data = {"name": "mohamed", "email": username ,"apk" : apk_open ,"id": apk_id}
                     while True:
                         try:
                             time.sleep(1)
@@ -210,10 +211,10 @@ def follow_tiktok():
                                     email_mail = cookies_totel.split('like_cookies_')[-1].split('.pkl')[0]
                                     
                                     totel_mail = email_mail.split('_')[-1]
-                                    totel_mail_new = int(700)+int(totel_mail) 
+                                    totel_mail_new =totel_mail 
                                     print(totel_mail_new)
                                     # Set your GitHub access token
-                                    access_token = "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"
+                                    access_token = "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"
 
                                     # Set the repository name
                                     repository_name = "you{}".format(totel_mail_new)
