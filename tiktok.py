@@ -1,8 +1,6 @@
 import os
 import sys
 fisrt_start = sys.argv[1]
-apk_open = sys.argv[2]
-apk_id = sys.argv[3]
 os.system('sudo apt update -y')
 os.system('sudo apt install python3-pip -y')
 os.system('sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb')
@@ -87,8 +85,7 @@ def like3like_login_first():
                     print('false_login')
                     break
 
-
-
+    
 def check_driver_open():
     try:
         all_windows = driver.window_handles
@@ -144,6 +141,14 @@ def failed_success_minutes():
     except Exception as ssssd2:
         print('failed_success_minutes:  ',ssssd2)
 def follow_tiktok():
+    for cookies_totel in os.listdir(os.getcwd()):
+        cookies_totel_1 = cookies_totel.split('_apk')[0]
+        if cookies_totel_1=='tiktok':
+            apk_open = cookies_totel.split('apk_')[-1].split('_id')[0]
+            apk_id =cookies_totel.split('id_')[-1].split('_data')[0]
+            
+            
+    
     my_list_like = []
     try:
         with open('unfollowing_tiktok.txt', 'r') as file:
@@ -183,6 +188,7 @@ def follow_tiktok():
                     database_url = 'https://ahmed-3cacf-default-rtdb.firebaseio.com/'
                     users_endpoint = fisrt_start
                     new_user_data = {"name": "mohamed", "email": username ,"apk" : apk_open ,"id": apk_id}
+                    print(new_user_data)
                     response_put = requests.put(f'{database_url}/{users_endpoint}', json=new_user_data)
                     while True:
                         try:
