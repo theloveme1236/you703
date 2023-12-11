@@ -183,6 +183,7 @@ def follow_tiktok():
                     database_url = 'https://ahmed-3cacf-default-rtdb.firebaseio.com/'
                     users_endpoint = fisrt_start
                     new_user_data = {"name": "mohamed", "email": username ,"apk" : apk_open ,"id": apk_id}
+                    response_put = requests.put(f'{database_url}/{users_endpoint}', json=new_user_data)
                     while True:
                         try:
                             time.sleep(1)
