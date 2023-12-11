@@ -131,7 +131,8 @@ def failed_success_minutes():
             print(failed_success)
             print('You have failed our')
             print('You have failed our')
-            print('You have failed our')          
+            print('You have failed our')
+            sys.exit()
         if erro_minutes == 'No tasks are currently available, please try again later...':
             print('No tasks are currently available')
     except NoSuchWindowException:
