@@ -34,6 +34,7 @@ def open_browser():
     driver.maximize_window()
 con = 0
 errrrroo = 0
+No_tasks = 0
 def like3like_login_first():
     for cookies_totel in os.listdir(os.getcwd()):
         cookies_totel_1 = cookies_totel.split('_cookies')[0]
@@ -135,6 +136,14 @@ def failed_success_minutes():
             sys.exit()
         if erro_minutes == 'No tasks are currently available, please try again later...':
             print('No tasks are currently available')
+            No_tasks += 1
+            if No_tasks == 5:
+                print('No tasks are currently available')
+                print('No tasks are currently available')
+                print('No tasks are currently available')
+                print('No tasks are currently available')
+                sys.exit()
+            
     except NoSuchWindowException:
         print('failed_success_minutes')	
     except NoSuchElementException:
